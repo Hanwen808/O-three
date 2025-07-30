@@ -10,6 +10,8 @@ The core **O3-sketch** structure is implemented in **./C++**.
 
 Other baseline methods are also implemented in **./C++**.
 
+We also provide a P4-16 implementation of O3-sketch for deployment on both software and hardware programmable network switches (e.g., BMv2 switch and Tofino switch) in **./P4/BMv2/** and **./P4/Tofino/**.
+
 ### Requirements
 
 - g++ (gcc-version >= 13.1.0)
