@@ -23,6 +23,7 @@ We preprocessed the datasets to remove all IPv6 packets to ensure that each pack
 You can use the following commands to build and run.
 
 ```
-g++ ./tcp_CDM_4KB.cpp -o tcp_CDM_4KB -std=c++17 -mavx2 -O3
-./tcp_CDM_4KB
+cd ./C++
+cmake .
+cmake --build . --config Release
 ```
