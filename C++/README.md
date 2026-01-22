@@ -35,5 +35,51 @@ This is a C++ implementation for O3-sketch and related solutions.
 │   ├── MVSketch.cpp
 │   ├── O3Skt2.cpp
 │   └── Waving.cpp
+├── ./scripts/
+│   ├── acc_elastic_caida.sh
+│   ├── acc_elastic_mawi.sh
+│   ├── acc_lean.sh
+│   ├── acc_lean_mawi.sh
+│   ├── acc_mvsketch_caida.sh
+│   ├── acc_mvsketch_mawi.sh
+│   ├── acc_o3skt2_caida.sh
+│   ├── acc_o3skt2_mawi.sh
+│   ├── acc_waving_caida.sh
+│   ├── acc_waving_mawi.sh
+│   ├── d_o3skt2_caida.sh
+│   ├── d_o3skt2_mawi.sh
+│   ├── phi_o3skt2_caida.sh
+│   └── phi_o3skt2_mawi.sh
 ```
 
+## Usage
+
+### Compilation
+Before compiling, make sure you are in the directory /C++/. And create the following directories to save the running results of different algorithms.
+```bash
+$ mkdir ./Elastic_CAIDA/
+$ mkdir ./Elastic_MAWI/
+$ mkdir ./Lean_CAIDA/
+$ mkdir ./Lean_MAWI/
+$ mkdir ./MVSketch_CAIDA/
+$ mkdir ./MVSketch_MAWI/
+$ mkdir ./Waving_CAIDA/
+$ mkdir ./Waving_MAWI/
+$ mkdir ./O3Skt2_CAIDA/
+$ mkdir ./O3Skt2_MAWI/
+$ mkdir -p ./Params/d_caida/
+$ mkdir -p ./Params/d_mawi/
+$ mkdir -p ./Params/2phi_caida/
+$ mkdir -p ./Params/2phi_mawi/
+```
+
+All algorithms are compiled using g++, the followding commands should be execueted.
+Note that, the xxx.sh is a bash shell file including g++ compile codes with optimize_flag $-O3$.
+```shell
+$ chmod u+x ./scripts/acc_o3skt2_caida.sh
+$ ./scripts/acc_o3skt2_caida.sh  # O3-sketch
+```
+
+## Requirements
+- g++ 7.5.0 or above
+- Compiler with support for C++17 standard
