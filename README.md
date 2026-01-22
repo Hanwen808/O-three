@@ -2,7 +2,13 @@
 
 ### Introduction
 
-Finding chaotic flows with high out-of-order packets is critical for diagnosing network performance issues. However, prior solutions fail to capture fine-grained per-flow out-of-order patterns, resulting in the loss of critical sequence information and reduced accuracy in chaotic flow detection. Moreover, their reliance on strong assumptions about packet arrival order further limits their flexibility. In this paper, we propose O3-sketch to achieve fast, flexible, and memory-efficient chaotic flow detection. By jointly considering the difference between the arriving and recorded sequence numbers and the recorded out-of-order count, we design a novel probabilistic replacement strategy. This strategy ensures that chaotic flows, with either persistently high or temporarily low out-of-order counts, can be correctly tracked, while non-chaotic flows are efficiently evicted. We theoretically prove that O3-sketch has one-sided error and derive a tight probabilistic error bound. We implement O3-sketch on an Intel Tofino programmable switch to demonstrate its hardware friendliness. Extensive experiments on real-world traffic traces show that O3-sketch improves chaotic flow detection accuracy by up to 45.74\% and achieves up to 291.25\(\times\) higher throughput than the state-of-the-art.
+Finding chaotic flows with high out-of-order packets is critical for diagnosing performance issues in modern networks. 
+Existing methods either fail to capture packet arrival order or can only handle short-term packet reordering, limiting their accuracy and generality in chaotic flow detection.
+To address these challenges, we propose O3-sketch, a novel algorithm that exploits the intrinsic out-of-order behavior of network flows. Our key insight is that chaotic flows exhibit stable and persistent reordering over time, while most flows either carry a few out-of-order packets or experience transient disorder.
+O3-sketch incorporates two novel metrics: out-of-order count and in-order gap count into its update strategy.
+This allows it to efficiently evict normal and transient disordering flows while retaining true chaotic flows with high accuracy, even under extreme memory constraints (e.g., 32KB).
+We provide rigorous theoretical guarantees for the O3-sketch and implement it on both CPU and P4 platforms.
+Extensive experiments on real-world traffic traces show that O3-sketch improves F1 score by up to 2.487$\times$, reduces measurement error by at least 90\%, and improves processing speed by up to 26.167$\times$ compared to the state-of-the-art.
 
 ### About this repo
 
