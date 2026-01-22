@@ -8,16 +8,11 @@ private:
     uint32_t d, m1; // m2;
     KEY **ID1; // *ID2;
     uint32_t **Count1, **MaxSeq1, **Count2; //*MaxSeq2;
-    //uint8_t  *Count2;
     uint32_t *hash_seeds;
-    uint32_t resubmit_cnt;
-    uint32_t total_pkt;
     uint32_t phi;
 public:
     O3Skt2(uint32_t, uint32_t, uint32_t);
     ~O3Skt2() {
-        // delete[] ID2;
-        // delete[] Count2;
         delete[] hash_seeds;
         for (int i = 0; i < d; ++i) {
             delete[] Count1[i];
