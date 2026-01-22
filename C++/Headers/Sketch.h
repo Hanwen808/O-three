@@ -1,7 +1,3 @@
-//
-// Created by Hanwen on 2025/7/2.
-//
-
 #ifndef SKETCH_H
 #define SKETCH_H
 #include <stdint.h>

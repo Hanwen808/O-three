@@ -1,7 +1,3 @@
-//
-// Created by Hanwen on 2025/7/3.
-//
-
 #ifndef O3SKT2_H
 #define O3SKT2_H
 #define TT 16
