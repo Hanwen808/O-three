@@ -16,7 +16,7 @@ The core **O3-sketch** structure is implemented in **./C++**.
 
 Other baseline methods are also implemented in **./C++**.
 
-We also provide a P4-16 implementation of O3-sketch for deployment on both software and hardware programmable network switches (e.g., BMv2 switch and Tofino switch) in **./P4/BMv2/** and **./P4/Tofino/**.
+We also provide a P4-16 implementation of O3-sketch for deployment on the hardware programmable network switches (e.g., Tofino switch) in **./P4/Tofino/**.
 
 ### Requirements
 
@@ -27,11 +27,3 @@ We also provide a P4-16 implementation of O3-sketch for deployment on both softw
 Before run those codes, you need to download the datasets from https://catalog.caida.org/details/dataset/passive_2019_pcap , then move them to ./data .
 
 We preprocessed the datasets to remove all IPv6 packets to ensure that each packet contains a source IP address, a destination IP address, a source port, a destination port, and a sequence number.
-
-You can use the following commands to build and run.
-
-```
-cd ./C++
-cmake .
-cmake --build . --config Release
-```
